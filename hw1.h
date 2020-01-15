@@ -1,11 +1,11 @@
 /******************************************************************
  * Program #: Homework #1
  *
- * Programmer: Robert H. Klenke
+ * Programmer: Logan Morro
  *
- * Due Date: NA
+ * Due Date: 2/10
  *
- * EGRE 347, Spring 2020       Instructor: Robert Klenke
+ * EGRE 491, Spring 2020       Instructor: Robert Klenke
  *
  * Pledge: I have neither given nor received unauthorized aid on this program.
  *
@@ -17,12 +17,12 @@
  *
  ******************************************************************/
 
-#define DESC_SIZE	40		// maximum size of part description
-#define NO_OF_PARTS	10		// maximum number of parts in our extensive catalog
-#define MAXCHAR		256		// maximum characters in the file name
+const int  DESC_SIZE = 40;		// maximum size of part description
+const int  NO_OF_PARTS = 10;		// maximum number of parts in our extensive catalog
+const int  MAXCHAR = 256;		// maximum characters in the file name
 
-#define	BY_PRICE	2
-#define	BY_PARTS	3
+const int BY_PRICE = 2;
+const int BY_PARTS = 3;
 
 
 struct supplier {

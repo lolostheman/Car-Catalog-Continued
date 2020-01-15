@@ -1,11 +1,11 @@
 /******************************************************************
  * Program #: Homework #1
  *
- * Programmer: Robert H. Klenke
+ * Programmer: Logan Morro
  *
- * Due Date: NA
+ * Due Date: 2/10
  *
- * EGRE 347, Spring 2020       Instructor: Robert Klenke
+ * EGRE 491, Spring 2020       Instructor: Robert Klenke
  *
  * Pledge: I have neither given nor received unauthorized aid on this program.
  *
@@ -17,12 +17,16 @@
  *
  ******************************************************************/
 
-#include <stdio.h>
-#include <string.h>
+
+#include <cstring>
 #include "hw1.h"
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 
 /* function to swap two part structures - passed by reference */
-swap_parts(struct part *part_a, struct part *part_b)
+void swap_parts(struct part *part_a, struct part *part_b)
 {
 	struct part temp_part;
 
@@ -47,7 +51,7 @@ swap_parts(struct part *part_a, struct part *part_b)
 
 }
 
-print_catalog(struct part list[], int num_parts)
+void print_catalog(struct part list[], int num_parts)
 {
 	int i;
 
@@ -64,7 +68,7 @@ print_catalog(struct part list[], int num_parts)
 
 }
 
-print_full_catalog(struct part list[], int num_parts)
+void print_full_catalog(struct part list[], int num_parts)
 {
 	int i;
 
@@ -81,7 +85,7 @@ print_full_catalog(struct part list[], int num_parts)
 
 }
 
-sort_catalog(struct part list[], int num_parts, int price_or_parts)
+void sort_catalog(struct part list[], int num_parts, int price_or_parts)
 {
 	int i,j, tempx,tempy, size;
 	int smallest, smallest_index;

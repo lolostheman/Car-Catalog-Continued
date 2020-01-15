@@ -25,7 +25,7 @@ void print_full_catalog(struct part list[], int num_parts);
 void print_catalog(struct part list[], int num_parts);
 void sort_catalog(struct part list[], int num_parts, int price_or_parts);
 
-void main(void)
+int main()
 {
 	FILE *infile = NULL;
 	char infilename[MAXCHAR];
