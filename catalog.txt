@@ -1,0 +1,6 @@
+1254	Retro_Encabulator	24500.99	Digikey	24530
+1342	Panametric_Fam___	234.99		Digikey	659832
+2349	Cardinal_Gram_Meter	3400.95		Newark	00231839
+453	Sperving_Bearing_	0.02		Digikey	23453
+48753	Hydro_Coptic_M_Vane	12.75		Walmart	489274
+83746	Lunar_Wayne_Shaft	34.55		Newark	00345698
