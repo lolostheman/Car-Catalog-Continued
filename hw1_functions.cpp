@@ -55,15 +55,15 @@ void print_catalog(struct part list[], int num_parts)
 {
 	int i;
 
-	printf("\tCatalog\n");
-	printf("Part no.\tDescription\tPrice\n");
-	printf("----------------------------------------\n");
+	cout<<"\tCatalog\n";
+	cout<<"Part no.\tDescription\tPrice\n";
+	cout<<"----------------------------------------\n";
 
 	for(i=0;i<num_parts;i++)
-	printf("%d\t%s\t%.2f\n",list[i].part_no, list[i].description,
-		                    list[i].price);
+	cout<<"%d\t%s\t%.2f\n",list[i].part_no, list[i].description,
+		                    list[i].price;
 
-	printf("\n\n");
+	cout<<"\n\n";
 
 
 }
@@ -72,15 +72,15 @@ void print_full_catalog(struct part list[], int num_parts)
 {
 	int i;
 
-	printf("\tFull Catalog including supplier\n");
-	printf("Part no.\tDescription\tPrice\tSupplier\tManu. Part No.\n");
-	printf("-------------------------------------------------------------------------\n");
+	cout<<"\tFull Catalog including supplier\n";
+	cout<<"Part no.\tDescription\tPrice\tSupplier\tManu. Part No.\n";
+	cout<<"-------------------------------------------------------------------------\n";
 
 	for(i=0;i<num_parts;i++)
-	printf("%d\t%s\t%.2f\t%s\t\t%d\n",list[i].part_no, list[i].description,
-		                    list[i].price, list[i].source.dealer, list[i].source.part_no);
+	cout<<list[i].part_no<<"\t"<< list[i].description<<"\t"<<
+		                    list[i].price<<"\t"<< list[i].source.dealer<<"\t\t"<< list[i].source.part_no<<"\n";
 
-	printf("\n\n");
+	cout<<"\n\n";
 
 
 }
