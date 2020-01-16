@@ -64,7 +64,7 @@ int main()
 	       myfile>>part_list[i].price;
 	       myfile>> part_list[i].source.dealer;
 	       myfile>>part_list[i].source.part_no;
-	       cout<<part_list[i].part_no<<" ";
+	      // cout<<part_list[i].part_no<<" ";
 		i++;
 		if(i > NO_OF_PARTS) {
 			printf("ERROR, number of parts in catalog is greater than list size!\n");
@@ -73,7 +73,7 @@ int main()
 	}
 		
 
-	num_of_parts = i;
+	num_of_parts = i-1;
 
 	print_full_catalog(part_list, num_of_parts);		// print as read
 
