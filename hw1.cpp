@@ -85,5 +85,10 @@ int main()
 
 	print_full_catalog(part_list, num_of_parts);				// print sorted by price number
 
+	sort_catalog(part_list, num_of_parts, BY_manu); //sort by maufacture
+
+	print_full_catalog(part_list, num_of_parts); //prints maunfacture sorted list
+
+	
 
 }		/* end main */
