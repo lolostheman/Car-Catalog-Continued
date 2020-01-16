@@ -23,7 +23,7 @@ const int  MAXCHAR = 256;		// maximum characters in the file name
 
 const int BY_PRICE = 2;
 const int BY_PARTS = 3;
-
+const int BY_manu = 4;
 
 struct supplier {
 	int part_no;
