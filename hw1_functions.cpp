@@ -130,11 +130,11 @@ void sort_catalog(struct part list[], int num_parts, int price_or_parts)
 	} /* end else if */
 	else if(price_or_parts == BY_manu){
 		for(i=0;i <num_parts; i++){
-			cheapest = list[i].price;
+			cheapest = list[i].source.part_no;
 			smallest_index = i;
 			for(j=i; j < num_parts; j++)
-				if(list[j].price < cheapest){
-					cheapest = list[j].price;
+				if(list[j].source.part_no < cheapest){
+					cheapest = list[j].source.part_no;
 					smallest_index = j;
 				}
 			swap_parts(&list[i], &list[smallest_index]);

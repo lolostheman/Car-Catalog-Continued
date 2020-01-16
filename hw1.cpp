@@ -3,17 +3,19 @@
  *
  * Programmer: Logan Morro
  *
+ * file: hw1.cpp
+ *
  * Due Date: 2/10
  *
  * EGRE 491, Spring 2020       Instructor: Robert Klenke
  *
  * Pledge: I have neither given nor received unauthorized aid on this program.
  *
- * Description: Program to demonstrate makefiles
+ * Description: This is the main function prints and reads files mostly
  *
  * Input: NA
  *
- * Output: print statements showing the results.
+ * Output: the catalot.txt sorted in different ways
  *
  ******************************************************************/
 
