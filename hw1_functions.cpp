@@ -73,12 +73,12 @@ void print_full_catalog(struct part list[], int num_parts)
 	int i;
 
 	cout<<"\tFull Catalog including supplier\n";
-	cout<<"Part no.\tDescription\tPrice\tSupplier\tManu. Part No.\n";
+	cout<<"Part no.    Description\t\tPrice\t  Supplier\tManu. Part No.\n";
 	cout<<"-------------------------------------------------------------------------\n";
 
 	for(i=0;i<num_parts;i++)
 	cout<<list[i].part_no<<"\t"<< list[i].description<<"\t"<<
-		                    list[i].price<<"\t"<< list[i].source.dealer<<"\t\t"<< list[i].source.part_no<<"\n";
+		                    list[i].price<<"\t  "<< list[i].source.dealer<<"\t\t"<< list[i].source.part_no<<"\n";
 
 	cout<<"\n\n";
 
