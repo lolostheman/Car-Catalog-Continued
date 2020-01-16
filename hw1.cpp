@@ -1,11 +1,11 @@
 /******************************************************************
  * Program #: Homework #1
  *
- * Programmer: Robert H. Klenke
+ * Programmer: Logan Morro
  *
- * Due Date: NA
+ * Due Date: 2/10
  *
- * EGRE 347, Spring 2020       Instructor: Robert Klenke
+ * EGRE 491, Spring 2020       Instructor: Robert Klenke
  *
  * Pledge: I have neither given nor received unauthorized aid on this program.
  *
@@ -17,9 +17,13 @@
  *
  ******************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstring>
+#include <string>
+#include <iostream>
+#include <fstream>
 #include "hw1.h"
+
+using namespace std;
 
 void print_full_catalog(struct part list[], int num_parts);
 void print_catalog(struct part list[], int num_parts);
@@ -28,32 +32,46 @@ void sort_catalog(struct part list[], int num_parts, int price_or_parts);
 int main()
 {
 	FILE *infile = NULL;
-	char infilename[MAXCHAR];
+	string  infilename;
 	char line[MAXCHAR];
 	struct part part_list[NO_OF_PARTS];
 	int num_of_parts, i = 0;
 
-	printf("Program to read in a part catalog from a file \n");
+	cout<<"Program to read in a part catalog from a file \n";
 
 	/* input file name to read and try and open it */
-	while(infile == NULL) {
-		printf("Input catalog filename: ");
-		scanf("%s",infilename);
-		printf("\n\n");
-		if((infile = fopen(infilename, "r")) == NULL) {
-			printf("ERROR: file %s can not be opened!\n",infilename);
+	int x=0;
+	while(x==0) {
+		cout<<"Input catalog filename: ";
+		cin>>infilename;
+		cout<<"\n\n";
+		ifstream myfile;
+		myfile.open(infilename.c_str(), ios::in);
+	//	infile = myfile;
+		if(!myfile) {
+			cout<<"ERROR: file "<<infilename<<" can not be opened!\n";
+			x=0;
+		}else{
+			x=1;
+			myfile.close();
 		}
 	}
 
-	while(fscanf(infile,"%d %s %f %s %d\n", &part_list[i].part_no, part_list[i].description,
-		                              &part_list[i].price, part_list[i].source.dealer,
-									  &part_list[i].source.part_no) != EOF) {
+	ifstream myfile (infilename);
+	while(! myfile.eof()){
+	       myfile>>part_list[i].part_no;
+	       myfile>> part_list[i].description;
+	       myfile>>part_list[i].price;
+	       myfile>> part_list[i].source.dealer;
+	       myfile>>part_list[i].source.part_no;
+	       cout<<part_list[i].part_no<<" ";
 		i++;
 		if(i > NO_OF_PARTS) {
 			printf("ERROR, number of parts in catalog is greater than list size!\n");
 			exit(0);
 		}
 	}
+		
 
 	num_of_parts = i;
 
