@@ -1,11 +1,11 @@
 /******************************************************************
- * Program #: Homework #1
+ * Program #: Homework #4
  *
  * Programmer: Logan Morro
  *
- * file: hw1.cpp
+ * file: main.cpp
  *
- * Due Date: 2/10
+ * Due Date: 3/29/2020
  *
  * EGRE 491, Spring 2020       Instructor: Robert Klenke
  *
@@ -13,7 +13,7 @@
  *
  * Description: This is the main function prints and reads files mostly
  *
- * Input: NA
+ * Input: the name of the txt document that has the catalog information
  *
  * Output: the catalot.txt sorted in different ways
  *
@@ -24,7 +24,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "hw1.h"
+#include "hw4.h"
 
 using namespace std;
 
@@ -61,6 +61,8 @@ int main()
 	}
 
 	ifstream myfile (infilename);
+	//this loop starts to build the vector untill the file reaches the end. the vector contains
+	//elements that are part structs.
 	while(! myfile.eof()){
 		part_list.push_back(part());
 	       myfile>>part_list[i].part_no;
@@ -75,8 +77,7 @@ int main()
 			exit(0);
 		}
 	}
-		
-
+	part_list.erase(part_list.end()-1);
 	num_of_parts = i;
 
 	print_full_catalog(part_list, num_of_parts);		// print as read
