@@ -28,17 +28,17 @@
 
 using namespace std;
 
-void print_full_catalog(vector<part> &list, int num_parts);
-void print_catalog(vector<part> &list, int num_parts);
-void sort_catalog(vector<part> &list, int num_parts, int price_or_parts);
+void print_full_catalog(vector<part> &list);
+void print_catalog(vector<part> &list);
+void sort_catalog(vector<part> &list, int price_or_parts);
 
 int main()
 {
 	FILE *infile = NULL;
 	string  infilename;
 	char line[MAXCHAR];
-	vector<part> part_list;
-	int num_of_parts, i = 0;
+	vector<part> part_list;//vector containing the part list which is made up of  part structures
+	int i = 0;//i holds the number of parts
 
 	cout<<"Program to read in a part catalog from a file \n";
 
@@ -78,21 +78,21 @@ int main()
 		}
 	}
 	part_list.erase(part_list.end()-1);
-	num_of_parts = i;
+	//num_of_parts = i;
 
-	print_full_catalog(part_list, num_of_parts);		// print as read
+	print_full_catalog(part_list);		// print as read
 
-	sort_catalog(part_list, num_of_parts, BY_PARTS);	// sort by part number
+	sort_catalog(part_list, BY_PARTS);	// sort by part number
 
-	print_full_catalog(part_list, num_of_parts);				// print sorted by part number
+	print_full_catalog(part_list);				// print sorted by part number
 
-	sort_catalog(part_list, num_of_parts, BY_PRICE);	// sort by price
+	sort_catalog(part_list, BY_PRICE);	// sort by price
 
-	print_full_catalog(part_list, num_of_parts);				// print sorted by price number
+	print_full_catalog(part_list);				// print sorted by price number
 
-	sort_catalog(part_list, num_of_parts, BY_manu); //sort by maufacture
+	sort_catalog(part_list, BY_manu); //sort by maufacture
 
-	print_full_catalog(part_list, num_of_parts); //prints maunfacture sorted list
+	print_full_catalog(part_list); //prints maunfacture sorted list
 
 	
 

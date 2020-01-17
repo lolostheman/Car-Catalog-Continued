@@ -30,7 +30,7 @@ using namespace std;
 //this function isnt called in out main.cpp.
 //input: a vector containing the parts list, and an int containing the number of parts
 //output: this function couts the part numbers, part descriptions, and part price.
-void print_catalog(vector<part> &list, int num_parts)
+void print_catalog(vector<part> &list)
 {
 	int i;
 
@@ -49,7 +49,7 @@ void print_catalog(vector<part> &list, int num_parts)
 //this function prints the full catalog(part number, description, price, manufactor name, and manufactor part number)
 //input: a vector containing the whole part list and an int that contains the number of parts
 //output: this function couts the whole catalog
-void print_full_catalog(vector<part> &list, int num_parts)
+void print_full_catalog(vector<part> &list)
 {
 	int i;
 
@@ -75,7 +75,7 @@ bool sortByManufacture_no(const part &lhs, const part &rhs){return lhs.source.pa
 //this function sorts the part_list based on t he type of sort passed. the type of sort passed is saved into the variable type as an int.
 //input: a vector containg the whole part list and the type of sort we will be doing (BY_PARTS,BY_PRICE,BY_manu)
 //output: no output just sorts the vectors.
-void sort_catalog(vector<part> &part_list, int num_parts, int type)
+void sort_catalog(vector<part> &part_list, int type)
 {
 	if(type==BY_PARTS){ sort(part_list.begin(), part_list.end(), sortByPart_no); }
 	if(type==BY_PRICE){ sort(part_list.begin(), part_list.end(), sortByPrice); }
