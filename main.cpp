@@ -23,20 +23,21 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "hw1.h"
 
 using namespace std;
 
-void print_full_catalog(struct part list[], int num_parts);
-void print_catalog(struct part list[], int num_parts);
-void sort_catalog(struct part list[], int num_parts, int price_or_parts);
+void print_full_catalog(vector<part> &list, int num_parts);
+void print_catalog(vector<part> &list, int num_parts);
+void sort_catalog(vector<part> &list, int num_parts, int price_or_parts);
 
 int main()
 {
 	FILE *infile = NULL;
 	string  infilename;
 	char line[MAXCHAR];
-	struct part part_list[NO_OF_PARTS];
+	vector<part> part_list;
 	int num_of_parts, i = 0;
 
 	cout<<"Program to read in a part catalog from a file \n";
@@ -61,6 +62,7 @@ int main()
 
 	ifstream myfile (infilename);
 	while(! myfile.eof()){
+		part_list.push_back(part());
 	       myfile>>part_list[i].part_no;
 	       myfile>> part_list[i].description;
 	       myfile>>part_list[i].price;
@@ -75,7 +77,7 @@ int main()
 	}
 		
 
-	num_of_parts = i-1;
+	num_of_parts = i;
 
 	print_full_catalog(part_list, num_of_parts);		// print as read
 
